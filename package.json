@@ -13,7 +13,27 @@
   "scripts": {
     "build": "babel src --out-dir dist --copy-files && tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "react-component",
+    "modal",
+    "dialog",
+    "dialog-box",
+    "modal-dialog",
+    "react-modal",
+    "popup",
+    "overlay",
+    "ui",
+    "ui-components",
+    "context-provider",
+    "modal-provider",
+    "dialog-provider",
+    "react-hooks",
+    "state-management",
+    "frontend",
+    "javascript",
+    "vite"
+],
   "author": "",
   "license": "ISC",
   "peerDependencies": {
