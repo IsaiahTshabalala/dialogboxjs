@@ -1,19 +1,22 @@
 /**File: ./src/modal/DialogBox.jsx
  * Author: ITA
  * DialogBox: A reusable modal dialog box component using react-modal.
- * This component is a wrapper of elements (e.g. inputs) that must be displayed in a modal dialogbox.
- * You import and use it in a component where you want to display certain contents in a dialog box.
+ * This component is a wrapper of elements (e.g. inputs) that must be displayed in a wrapper.
+ * You import and use it where in a component where you want to use it to display certain contents in a dialog box.
  * 
  * Change Log
  * =========================================================
- * Date                Version     Author    Description
+ * Date         Version   Author    Description
  * =========================================================
- * 2025/11/27    1.0.0         ITA         Genesis. 
+ * 2025/11/27   1.0.0     ITA       Genesis.
+ * 2025/11/30   1.0.1     ITA       When this component was imported from its npm published  package (dialogboxjs) into a 
+ *                                  vite based project, it complained about a missing PropTypes default import in prop-types.
+ *                                  Vite required explicit non-default import of prop-types objects.
  */
 /** File: ./src/modal/DialogBox.jsx */
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import PropTypes from 'prop-types';
+import { node, object } from 'prop-types';
 import { useDialogBox } from "./DialogBoxProvider"
 
 // Ensure react-modal accessibility works
@@ -65,6 +68,6 @@ export default function DialogBox({ styles = null, children }) {
 }
 
 DialogBox.propTypes = {
-    styles: PropTypes.object,
-    children: PropTypes.node.isRequired,
+    styles: object,
+    children: node.isRequired,
 };

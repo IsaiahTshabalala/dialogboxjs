@@ -1,6 +1,6 @@
 {
   "name": "dialogboxjs",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A reusable modal dialog box component using react-modal.",
   "main": "dist/index.js",
   "module": "dist/index.js",
