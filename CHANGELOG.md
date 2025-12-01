@@ -18,3 +18,6 @@ When this package was imported from npm into a vite based project, it complained
 ## 2025/12/01 - Verson 1.0.4 - ITA
 - Reverted previous code because issues related to importing into a Vite project did not resolve, and
 - Updated build process to use Vite library mode (ESM + CJS bundles).
+
+## 2025/12/01 - Version 1.0.5 - ITA
+- Removed prop-types from the external dependencies list.

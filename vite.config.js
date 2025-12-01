@@ -7,6 +7,7 @@
  * Date       Version    Author         Description
  * ===========================================================================
  * 2025/12/01 1.0.0      ChatGPT & ITA  Initial version
+ * 2025/12/01 1.0.2      ChatGPT & ITA  Removed prop-types from the external dependencies list.
  * ===========================================================================
  */
 
@@ -29,7 +30,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // React and ReactDOM must remain external
-      external: ['react', 'react-dom', 'prop-types'],
+      external: ['react', 'react-dom'],
       output: {
         globals: {
           react: 'React',
