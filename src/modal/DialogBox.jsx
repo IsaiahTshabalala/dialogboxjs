@@ -11,12 +11,15 @@
  * 2025/11/27   1.0.0     ITA       Genesis.
  * 2025/11/30   1.0.1     ITA       When this component was imported from its npm published  package (dialogboxjs) into a 
  *                                  vite based project, it complained about a missing PropTypes default import in prop-types.
- *                                  Vite required explicit non-default import of prop-types objects.
+ *                                  Vite required explicit non-default import of prop-types object.
+ * 2025/12/01   1.0.2     ITA       Reverted back to default import of prop-types and tried another workaround for the vite issue.
+ *                                  When importing this compoent into a vite based project from its published package the vite
+ *                                  issue was still there.
  */
 /** File: ./src/modal/DialogBox.jsx */
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import { node, object } from 'prop-types';
+import PropTypes from 'prop-types';
 import { useDialogBox } from "./DialogBoxProvider"
 
 // Ensure react-modal accessibility works
@@ -68,6 +71,6 @@ export default function DialogBox({ styles = null, children }) {
 }
 
 DialogBox.propTypes = {
-    styles: object,
-    children: node.isRequired,
+    styles: PropTypes.object,
+    children: PropTypes.node.isRequired,
 };

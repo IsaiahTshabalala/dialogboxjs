@@ -10,11 +10,15 @@
  * 2025/11/27   1.0.0     ITA       Genesis.
  * 2025/11/30   1.0.1     ITA       When this component was imported from a published dialogboxjs package into a 
  *                                  vite based project, it complained about a missing PropTypes default import in prop-types.
- *                                  Vite required explicit non-default import of prop-types objects.
+ *                                  Vite required explicit non-default import of prop-types object.
+ * 2025/12/01   1.0.2     ITA       Reverted back to default import of prop-types and tried another workaround for the vite issue.
+ *                                  When importing this compoent into a vite based project from its published package the vite
+ *                                  issue was still there.
+ *
  */
 /** File: ./src/modal/DialogBoxProvider.jsx */
 import { createContext, useContext, useRef } from 'react';
-import { node } from 'prop-types';
+import PropTypes from 'prop-types';
 
 // Create context
 const DialogBoxContext = createContext();
@@ -50,7 +54,7 @@ export default function DialogBoxProvider({ children }) {
 }
 
 DialogBoxProvider.propTypes = {
-    children: node.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 // Custom hook for convenience

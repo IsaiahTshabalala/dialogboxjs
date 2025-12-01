@@ -79,7 +79,14 @@ export default function App() {
 
 ## Notes
  
-Ensure `DialogBoxProvider` wraps all components that use `DialogBox`. 
+- Ensure `DialogBoxProvider` wraps all components that use `DialogBox`.
+ 
+- Consumers using CommonJS will need to access the default export via .default:
+```
+// How to import in code written in CommonJS
+const DialogBoxProvider = require('dialogboxjs').default;
+const { useDialogProvider, DialogBox } = require('dialogboxjs');
+```
 
 ---
 ## License

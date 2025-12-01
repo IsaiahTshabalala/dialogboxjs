@@ -1,9 +1,9 @@
 {
   "name": "dialogboxjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A reusable modal dialog box component using react-modal.",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
@@ -11,7 +11,10 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "babel src --out-dir dist --copy-files && tsc"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "keywords": [
     "react",
@@ -33,7 +36,7 @@
     "frontend",
     "javascript",
     "vite"
-],
+  ],
   "author": "",
   "license": "ISC",
   "peerDependencies": {
@@ -41,13 +44,12 @@
     "react-dom": ">=18"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@vitejs/plugin-react": "^5.1.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "@babel/cli": "^7.28.3",
-    "@babel/core": "^7.28.5",
-    "@babel/preset-env": "^7.28.5",
-    "@babel/preset-react": "^7.28.5",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6"
   },
   "dependencies": {
     "prop-types": "^15.8.1",

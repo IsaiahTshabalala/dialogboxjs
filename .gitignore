@@ -6,6 +6,8 @@ yarn-error.log*
 pnpm-debug.log*
 .pnpm-debug.log
 
+package-lock.json
+
 # Build outputs
 dist/
 build/
