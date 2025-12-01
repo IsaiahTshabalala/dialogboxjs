@@ -21,3 +21,6 @@ When this package was imported from npm into a vite based project, it complained
 
 ## 2025/12/01 - Version 1.0.5 - ITA
 - Removed prop-types from the external dependencies list.
+
+## 2025/12/01 - Version 1.0.6 - ITA
+- Regenerated build artefacts for this package for npm publishing, in keeping with the code updates.
