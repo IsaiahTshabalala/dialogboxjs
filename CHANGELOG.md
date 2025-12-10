@@ -24,3 +24,7 @@ When this package was imported from npm into a vite based project, it complained
 
 ## 2025/12/01 - Version 1.0.6 - ITA
 - Regenerated build artefacts for this package for npm publishing, in keeping with the code updates.
+
+## 2025/12/10 - Version 1.0.7 - ITA
+- Change all default exports to named exports. This is to improve tree-shaking in consumers of this package that use modern bundlers like Vite and WebPack.
+- useDialogBox function to throw an error if used in a component not wrapped inside a DialogBoxProvider.

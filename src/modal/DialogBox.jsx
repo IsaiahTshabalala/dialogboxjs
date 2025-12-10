@@ -15,6 +15,8 @@
  * 2025/12/01   1.0.2     ITA       Reverted back to default import of prop-types and tried another workaround for the vite issue.
  *                                  When importing this compoent into a vite based project from its published package the vite
  *                                  issue was still there.
+ * 2025/12/10   1.0.3     ITA       Changed the DialogBox from default to named export, to match with dialogboxjs package.
+ *                                  Dialogboxjs changed default exports to named ones,so as to improve tree-shaking in consumers with modern bundlers like Vite and WebPack.
  */
 /** File: ./src/modal/DialogBox.jsx */
 import { useEffect, useState } from 'react';
@@ -44,7 +46,7 @@ const modalStyles = {
     },
 };
 
-export default function DialogBox({ styles = null, children }) {
+export function DialogBox({ styles = null, children }) {
     const { setCloseFunction, setOpenFunction } = useDialogBox();
     const [isOpen, setIsOpen] = useState(false);
 
