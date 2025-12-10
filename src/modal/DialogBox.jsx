@@ -17,12 +17,13 @@
  *                                  issue was still there.
  * 2025/12/10   1.0.3     ITA       Changed the DialogBox from default to named export, to match with dialogboxjs package.
  *                                  Dialogboxjs changed default exports to named ones,so as to improve tree-shaking in consumers with modern bundlers like Vite and WebPack.
+ * 2025/12/10   1.0.4     ITA       Set the styling of the DialogBox such that it is 'blank canvas', so as to allow the developers to provide styling for the contents to be displayed in the DialogBox.
  */
 /** File: ./src/modal/DialogBox.jsx */
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
-import { useDialogBox } from "./DialogBoxProvider"
+import { useDialogBox } from './DialogBoxProvider'
 
 // Ensure react-modal accessibility works
 Modal.setAppElement('#root');
@@ -35,16 +36,18 @@ const modalStyles = {
         right: 'auto',
         bottom: 'auto',
         transform: 'translate(-50%, -50%)',
-        padding: '24px',
+        padding: 0,
         maxWidth: '90vw',
         width: '480px',
         borderRadius: '8px',
+        background: 'transparent',
+        border: 'none',
     },
     overlay: {
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        zIndex: 1000,
+        background: 'rgba(0,0,0,0.5)',
+        zIndex: 1000
     },
-};
+  };
 
 export function DialogBox({ styles = null, children }) {
     const { setCloseFunction, setOpenFunction } = useDialogBox();
@@ -64,7 +67,7 @@ export function DialogBox({ styles = null, children }) {
         <Modal
             isOpen={isOpen}
             onRequestClose={closeModal}
-            style={styles || modalStyles}
+            style={modalStyles}
             shouldCloseOnOverlayClick={true}
         >
             {children}
