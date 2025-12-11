@@ -1,9 +1,10 @@
 # dialogboxjs
-
+ 
  A reusable modal dialog box component using react-modal. It is written in Javascript.
  * This component is a wrapper of elements (e.g. inputs) that must be displayed in a modal dialogbox.
  * You import and use it in a component where you want to display certain contents in a dialog box.
-
+ * The dialog box is like a blank canvas, you only have to worry about styling the contents that you display within the dialogbox.
+ 
 ## Installation
 
 ```
@@ -47,13 +48,16 @@ export default function MyComponent() {
         <div>
             <h1>DialogBox Example</h1>
             <p>Click the button to open the DialogBox.</p>
-            <button onClick={openButtonClicked} >Open Modal</button>
+            <button style={{ borderColor: "black"}} onClick={openButtonClicked} >Open Modal</button>
             <DialogBox>
-                <h2 >Hello from DialogBox!</h2>
-                <input type="text" placeholder="Type something..."
-                        value={myInput} onChange={inputChanged} />
-                <p>Click the button to close the DialogBox</p>
-                <button onClick={closeButtonClicked} >Close Modal</button>
+                <div style={{backgroundColor: "white", color: "black", padding: "5px"}}>
+                    <h2 >Hello from DialogBox!</h2>
+                    <input style={{padding: "6px"}} type="text" placeholder="Type something..."
+                            value={myInput} onChange={inputChanged} />
+                    <p>Click the button to close the DialogBox</p>
+                    <button style={{ borderColor: "black", margin: "3px"}} onClick={requestClose} >Cancel</button>
+                    <button style={{ borderColor: "black", margin: "3px"}} onClick={closeButtonClicked} >Submit</button>
+                </div>
             </DialogBox>
         </div>
     );

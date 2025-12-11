@@ -31,3 +31,6 @@ When this package was imported from npm into a vite based project, it complained
 
 ## 2025/12/10 - Version 1.0.8 - ITA
 - Style the DialogBox into a 'blank canvas', leaving developers to only worry about styling the contents displayed inside the DialogBox.
+
+## 2025/12/11 - Version 1.0.9 - ITA
+- Improved README.md documentation in keeping up with improvements to the DialogBox component.
